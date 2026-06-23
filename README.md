@@ -1,66 +1,70 @@
-# Tic-Tac-Toe AI (Juego del Gato) 🎮🤖
+# Tic-Tac-Toe AI 🎮🤖
 
-Un clon moderno y altamente pulido del clásico juego *Tic-Tac-Toe* (Gato) desarrollado en **C++** utilizando la biblioteca **SFML** (Simple and Fast Multimedia Library). El proyecto cuenta con una interfaz gráfica dinámica, un gestor de audio robusto y un sistema de juego contra Inteligencia Artificial con múltiples niveles de dificultad.
-
----
-
-## ✨ Características Principales
-
-* **Máquina de Estados Sólida:** Transiciones fluidas entre pantallas mediante control de estados (`Menu`, `Game`, `GameOver`, `Settings`, `ModeSelect`, `DifficultySelect`).
-* **Modos de Juego:**
-    * **1 vs 1:** Modo local clásico para dos jugadores.
-    * **vs IA:** Desafía a la computadora con lógica de toma de decisiones modularizada.
-* **Dificultad Ajustable:** Tres niveles de juego para la IA (`Fácil`, `Medio` y `Difícil`) que modifican su comportamiento y precisión.
-* **UI/UX Pulida:**
-    * Fondos con degradados dinámicos calculados en tiempo real.
-    * Efectos visuales avanzados (sombras proyectadas en las piezas `X` y `O`).
-    * Línea de victoria animada y estilizada con bordes dorados mediante funciones matemáticas (`std::hypot`, `std::atan2`).
-    * Botones interactivos con efectos *hover* visuales y sonoros.
-* **Gestor de Audio Integrado (`AudioManager`):** * Música de fondo en bucle (`.ogg`).
-    * Efectos de sonido independientes (`.wav`) para clics, movimientos, victorias, empates y eventos *hover*.
-    * Panel de configuración de audio dedicado para mutear o regular el volumen de la música y los efectos (SFX) por separado.
+A modern, highly polished clone of the classic *Tic-Tac-Toe* game developed in **C++** using the **SFML** (Simple and Fast Multimedia Library). The project features a dynamic graphical interface, a robust audio management system, and an AI opponent with multiple difficulty levels.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## ✨ Key Features
 
-* **Lenguaje:** C++17 (o superior)
-* **Biblioteca Gráfica y Multimedia:** [SFML 2.6+](https://www.sfml-dev.org/) (Modules: Graphics, Audio, Window, System)
-* **Lógica de IA:** Algoritmos de optimización/búsqueda integrados en `IA.hpp`.
+* **Robust State Machine:** Fluid screen transitions managed via structured state control (`Menu`, `Game`, `GameOver`, `Settings`, `ModeSelect`, `DifficultySelect`).
+* **Game Modes:**
+    * **1 vs 1:** Classic local multiplayer mode for two players.
+    * **vs AI:** Challenge the computer, powered by modular decision-making logic.
+* **Adjustable Difficulty:** Three AI levels (`Easy`, `Medium`, and `Hard`) that modify its behavioral patterns and decision accuracy.
+* **Polished UI/UX:**
+    * Real-time calculated dynamic gradient backgrounds.
+    * Advanced visual effects, including drop shadows on `X` and `O` game pieces.
+    * Animated, stylized winning line with golden borders calculated dynamically using mathematical functions (`std::hypot`, `std::atan2`).
+    * Interactive buttons featuring visual and auditory hover effects.
+* **Integrated Audio Manager (`AudioManager`):** * Looping background music (`.ogg`).
+    * Independent sound effects (`.wav`) for clicks, movements, wins, draws, and hover events.
+    * Dedicated audio settings panel to mute or regulate music and sound effects (SFX) volume independently.
 
 ---
 
-## 🎮 Controles del Juego
+## 🛠️ Tech Stack
 
-* **Clic Izquierdo:** Interactuar con los menús, seleccionar opciones y colocar tu pieza (`X` o `O`) en el tablero.
-* **Clic Derecho:** Regresar instantáneamente al menú principal desde cualquier pantalla secundaria (Ajustes, Selección de Modo, Dificultad).
+* **Language:** C++17 (or higher)
+* **Graphics & Multimedia Library:** [SFML 2.6+](https://www.sfml-dev.org/) (Modules: Graphics, Audio, Window, System)
+* **AI Logic:** Deterministic evaluation and search algorithms integrated within `IA.hpp` for game-state assessment.
 
 ---
 
-## 💻 Compilación e Instalación
+## 🎮 Game Controls
 
-### Prerrequisitos
-Asegúrate de tener instalado un compilador de C++ compatible con C++17 (como `GCC`/`MinGW` o `MSVC`) y la biblioteca **SFML** configurada en las variables de entorno de tu sistema o en tu IDE.
+* **Left Click:** Interact with menus, select options, and place your piece (`X` or `O`) on the board.
+* **Right Click:** Instantly return to the Main Menu from any secondary screen (Settings, Mode Selection, Difficulty).
 
-### Clonar el Repositorio
-`git clone [https://github.com/TU_USUARIO/Tic-Tac-Toe-AI.git](https://github.com/TU_USUARIO/Tic-Tac-Toe-AI.git)
+---
+
+## 💻 Compilation and Installation
+
+### Prerequisites
+Ensure you have a C++17 compatible compiler installed (such as `GCC`/`MinGW` or `MSVC`) and the **SFML** library configured in your system environment variables or IDE.
+
+### Clone the Repository
+`git clone [https://github.com/Imtexis09/Tic-Tac-Toe-AI.git](https://github.com/Imtexis09/Tic-Tac-Toe-AI.git)
 cd Tic-Tac-Toe-AI`
+### Terminal Compilation (Using MinGW/GCC)
+Make sure to properly link all SFML dependencies (graphics, window, audio, system):
+```bash
+g++ -c main.cpp -I"C:\Path\To\SFML\include"
+g++ main.o -o tic_tac_toe -L"C:\Path\To\SFML\lib" -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system
+```
 
-### Compilación desde la Terminal (usando MinGW/GCC)
-Asegúrate de enlazar correctamente las dependencias de SFML (graphics, window, audio, system):
-  * `g++ -c main.cpp -I"C:\Ruta\A\SFML\include"`
-  * `g++ main.o -o juego_gato -L"C:\Ruta\A\SFML\lib" -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system`
+---
 
-
-## 📋 Nota sobre Recursos (Assets)
-El juego busca los archivos de audio en las siguientes rutas relativas por defecto:
-  * `sounds/background.ogg`
-  * `sounds/click.wav, sounds/move.wav, sounds/win.wav, sounds/draw.wav, sounds/hover.wav`
+## 📋 Asset Resource Note
+The game searches for audio files in the following relative paths by default:
+* `sounds/background.ogg`
+* `sounds/click.wav`, `sounds/move.wav`, `sounds/win.wav`, `sounds/draw.wav`, `sounds/hover.wav`
     
-Asegúrate de que la carpeta `sounds/` esté en el mismo directorio que tu ejecutable final para evitar advertencias en la consola.
+Ensure the `sounds/` directory remains in the same folder as your final executable to prevent console asset-loading warnings.
 
-## 📐 Detalles de Arquitectura Técnica
-El código base demuestra buenas prácticas en desarrollo de videojuegos nativos:
+---
 
-  * Desacoplamiento de Audio: El uso de `sf::SoundBuffer` y `sf::Sound` por separado evita la sobrecarga de memoria al reutilizar buffers de audio para sonidos repetitivos (como el hover o el move).
-  * Lógica Vectorial: El cálculo de la rotación y longitud de la línea de victoria se realiza dinámicamente usando trigonometría pura basándose en la resolución fija de la ventana ($700 \times 700$ píxeles).
+## 📐 Technical Architecture Details
+The codebase showcases software design best practices applied to native game development:
+
+* **Audio Decoupling:** Using `sf::SoundBuffer` and `sf::Sound` separately prevents memory overhead by reusing audio buffers for repetitive sounds (such as hover or move events) instead of reloading them into memory.
+* **Vectorial Logic:** Calculations for the winning line's rotation and length are dynamically performed using pure trigonometry based on the fixed window resolution (700 x 700 pixels).
